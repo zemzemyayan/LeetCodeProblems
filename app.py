@@ -1,24 +1,39 @@
-# İlk on karakter yolcuların telefon numaralarından oluşmaktadır.
-# Bir sonraki karakter kişinin cinsiyetini belirtir.
-# Kişinin yaşını belirtmek için aşağıdaki iki karakter kullanılır.
-# Son iki karakter o kişinin hangi koltuğa oturacağını belirler
+#  Three Consecutive Odds
 
+# Bir tamsayı dizisi verildiğinde arr, true dizide ardışık üç tek sayı varsa döndürülür. Aksi takdirde döndürülür  false.
+ 
 
-# Giriş: details = ["7868190130M7522","5303914400F9211","9273338290F4010"]
-#  Çıkış: 2
-#  Açıklama: 0, 1 ve 2 indekslerindeki yolcuların yaşları 75, 92 ve 40'tır. Dolayısıyla, 60 yaşın üzerinde olan 2 kişi vardır.
+#Bilgi:
+# range(start, stop, step)
+# start: Aralığın başlangıç değeri (dahil).
+# stop: Aralığın bitiş değeri (hariç).
+# step: Her adımda aralığın ne kadar artacağı (isteğe bağlı, varsayılan olarak 1'dir).
+# Örnek 1:
 
-# BİLGİ: 
-# range(4) Python'da kullanılan bir fonksiyondur ve 0'dan başlayarak verilen sayıdan bir eksik olan sayıya kadar bir aralık oluşturur. Yani, range(4) ifadesi şu aralığı oluşturur: 0, 1, 2, 3. Bu aralık genellikle döngülerde kullanılır.
+# Giriş: arr = [2,6,4,1]
+#  Çıkış: false
+#  Açıklama: Üç ardışık oran yoktur.
+# Örnek 2:
 
-details = ["7868190130M7522","5303914400F9211","9273338290F4010","9273338290F5010","9273338290F7810","9273338290F5010","9273338290F7010"]
-n=len(details)
-sayac=0
-print(n)
-for i in details:
-    yas=i[11]+i[12]
-    print(yas)
-    if(int(yas)>60):
-        sayac=sayac+1
+# Giriş: arr = [1,2,34,3,4,5,7,23,12]
+#  Çıkış: true
+#  Açıklama: [5,7,23] üç ardışık tek sayıdır.
 
-print(sayac,"kişi 60 yaş üzerindedir.")
+arr = [2,6,4,1,5,7,6,9,3,6,9]
+n=len(arr)
+i=0
+while(True):
+    if(i+2==n):
+            break
+    if((arr[i]%2==1) and (arr[i+1]%2==1) and (arr[i+2]%2==1)):
+        print("there is three consecutive numbers in the array ")
+        state=True
+    
+         
+    i=i+1
+
+if(state==False):
+   print("there is not three consecutive numbers in the array")
+
+    
+
